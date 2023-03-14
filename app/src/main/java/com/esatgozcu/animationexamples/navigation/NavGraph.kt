@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.esatgozcu.animationexamples.ui.view.HomePage
+import com.esatgozcu.animationexamples.ui.view.PaperPlaneView
 import com.esatgozcu.animationexamples.ui.view.SnowFlakeView
 import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 
@@ -24,10 +25,14 @@ fun NavGraph(navController: NavHostController) {
         composable(route = Screens.SnowFlake.route) {
             SnowFlakeView()
         }
+        composable(route = Screens.PaperPlane.route) {
+            PaperPlaneView()
+        }
     }
 }
 
 sealed class Screens(val route: String) {
     object HomePage: Screens("HomePage")
     object SnowFlake: Screens("SnowFlake")
+    object PaperPlane: Screens("PaperPlane")
 }

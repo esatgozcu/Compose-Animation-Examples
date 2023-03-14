@@ -28,7 +28,7 @@ fun HomePage(navController: NavController) {
             navController.navigate(Screens.SnowFlake.route)
         }
         HomePageItem(title = "Paper Plane", image = R.drawable.ic_paper_plane){
-
+            navController.navigate(Screens.PaperPlane.route)
         }
     }
 }
