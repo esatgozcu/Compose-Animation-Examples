@@ -14,7 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.esatgozcu.animationexamples.R
+import com.esatgozcu.animationexamples.navigation.Screens
 import com.esatgozcu.animationexamples.ui.theme.AnimationExamplesTheme
+import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 
 @Composable
 fun HomePage(navController: NavController) {
@@ -23,7 +25,7 @@ fun HomePage(navController: NavController) {
         verticalArrangement = Arrangement.Center,
     ) {
         HomePageItem(title = "Snow Flake", image = R.drawable.ic_snow_flake){
-
+            navController.navigate(Screens.SnowFlake.route)
         }
         HomePageItem(title = "Paper Plane", image = R.drawable.ic_paper_plane){
 
@@ -36,9 +38,11 @@ fun HomePageItem(title:String,
                  image:Int,
                  click: (()->Unit)){
     Row(horizontalArrangement = Arrangement.spacedBy(5.dp),
-        modifier = Modifier.clickable {
-            click()
-        }.padding(10.dp),
+        modifier = Modifier
+            .clickable {
+                click()
+            }
+            .padding(10.dp),
     ){
         Text(text = title)
         Image(
