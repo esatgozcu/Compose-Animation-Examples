@@ -8,10 +8,8 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.esatgozcu.animationexamples.ui.view.BlinkCircleView
-import com.esatgozcu.animationexamples.ui.view.HomePage
-import com.esatgozcu.animationexamples.ui.view.PaperPlaneView
-import com.esatgozcu.animationexamples.ui.view.SnowFlakeView
+import com.esatgozcu.animationexamples.ui.view.*
+import com.esatgozcu.animationexamples.ui.viewModel.CircleRotationVM
 import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 
 @Composable
@@ -32,6 +30,9 @@ fun NavGraph(navController: NavHostController) {
         composable(route = Screens.BlinkCircle.route) {
             BlinkCircleView()
         }
+        composable(route = Screens.CircleRotation.route) {
+            CircleRotationView()
+        }
     }
 }
 
@@ -40,4 +41,5 @@ sealed class Screens(val route: String) {
     object SnowFlake: Screens("SnowFlake")
     object PaperPlane: Screens("PaperPlane")
     object BlinkCircle: Screens("BlinkCircle")
+    object CircleRotation: Screens("CircleRotation")
 }

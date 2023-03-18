@@ -53,6 +53,9 @@ fun HomePage(navController: NavController) {
                     .background(Color.Black)
             )
         }
+        HomePageItem(title = "Circle Rotation", image = R.drawable.ic_rotate_3d){
+            navController.navigate(Screens.CircleRotation.route)
+        }
     }
 }
 
