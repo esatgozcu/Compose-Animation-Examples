@@ -26,6 +26,9 @@ fun NavGraph(navController: NavHostController) {
         composable(route = Screens.SnowFlake.route) {
             SnowFlakeView()
         }
+        composable(route = Screens.PaperPlane.route) {
+            PaperPlaneView()
+        }
         composable(route = Screens.BlinkCircle.route) {
             BlinkCircleView()
         }
