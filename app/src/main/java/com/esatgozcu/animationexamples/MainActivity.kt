@@ -22,8 +22,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ScreenSize.screensWidth = LocalConfiguration.current.screenWidthDp
-                    ScreenSize.screenHeight = LocalConfiguration.current.screenHeightDp
+                    ScreenSize.screensWidth = LocalConfiguration.current.screenWidthDp.toDouble()
+                    ScreenSize.screenHeight = LocalConfiguration.current.screenHeightDp.toDouble()
                     NavGraph(navController = rememberNavController())
                 }
             }
