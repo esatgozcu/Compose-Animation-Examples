@@ -42,6 +42,7 @@ class ConfettiAnimationVM(
     var confettiSize: Float = 13.0f,
     var dropHeight: Float = 600.0f,
     var fadesOut: Boolean = true,
+    var fireworkEffect: Boolean = false,
     var opacity: Double = 1.0,
     var openingAngle: Double = 60.0,
     var closingAngle: Double = 120.0,

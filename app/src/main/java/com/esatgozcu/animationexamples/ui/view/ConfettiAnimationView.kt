@@ -3,10 +3,8 @@ package com.esatgozcu.animationexamples.ui.view
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
-import androidx.compose.material.ButtonColors
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
@@ -22,7 +20,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.esatgozcu.animationexamples.R
 import com.esatgozcu.animationexamples.ui.viewModel.ConfettiAnimationVM
 import com.esatgozcu.animationexamples.ui.viewModel.ConfettiTypes
-import com.esatgozcu.animationexamples.ui.viewModel.SHAPES
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.PI
@@ -47,12 +44,30 @@ fun ConfettiAnimationView(viewModel: ConfettiAnimationVM = viewModel()) {
             }) {
             Text(text = "\uD83C\uDF89")
         }
-        //viewModel.confettiNumber = 50
-        /*viewModel.confettiTypes = listOf(ConfettiTypes.Text("Text"),
+        /* FireworkEffect
+        viewModel.fireworkEffect = true
+        viewModel.confettiNumber = 40
+        viewModel.openingAngle = 0.0
+        viewModel.closingAngle = 360.0
+        viewModel.radius = 200.0f */
+
+        /* Emoji - Text
+        viewModel.confettiTypes = listOf(
+            ConfettiTypes.Text("❤️"),
+            ConfettiTypes.Text("\uD83D\uDC99"),
+            ConfettiTypes.Text("A")
+        )
+        viewModel.confettiSize = 20.0f */
+
+        /* Image
+        viewModel.confettiTypes = listOf(
             ConfettiTypes.Image(R.drawable.ic_snow_flake),
-            ConfettiTypes.Shape(SHAPES.PARALLELOGRAM))*/
-        //viewModel.openingAngle = 0.0
-        //viewModel.closingAngle = 360.0
+            ConfettiTypes.Image(R.drawable.ic_paper_plane),
+            ConfettiTypes.Image(R.drawable.ic_rotate_3d)
+        )
+        viewModel.fadesOut = false */
+
+        /* Default */
         ConfettiView(counter, viewModel)
     }
 }
@@ -137,14 +152,21 @@ fun ConfettiFrame(viewModel: ConfettiAnimationVM) {
         } else if (closeAngle > openAngle) {
             Random.nextDouble(openAngle, closeAngle).toFloat()
         } else {
-            Random.nextDouble(openAngle, closeAngle + 360).rem(360.0).toFloat()
+            Random.nextDouble(openAngle, (closeAngle + 360)).rem(360).toFloat()
         }
     }
+    val randomAngle = remember {
+        getRandomAngle()
+    }
     fun getDistance(): Float {
-        return (Random.nextDouble(0.01, 1.0).pow(0.25) * radius).toFloat()
+        return if (viewModel.fireworkEffect){
+            radius
+        } else{
+            (Random.nextDouble(0.01, 1.0).pow(0.25) * radius).toFloat()
+        }
     }
     fun deg2rad(number: Float): Float {
-        return (number * PI / 180.0).toFloat()
+        return (number * PI / 180).toFloat()
     }
 
     Box(
@@ -163,7 +185,7 @@ fun ConfettiFrame(viewModel: ConfettiAnimationVM) {
     LaunchedEffect(Unit) {
         scope.launch {
             animateX.animateTo(
-                targetValue = getDistance() * cos(deg2rad(getRandomAngle())),
+                targetValue = getDistance() * cos(deg2rad(randomAngle)),
                 animationSpec = repeatable(
                     iterations = 1,
                     animation = tween(
@@ -198,7 +220,7 @@ fun ConfettiFrame(viewModel: ConfettiAnimationVM) {
         }
         scope.launch {
             animateY.animateTo(
-                targetValue = -getDistance() * sin(deg2rad(getRandomAngle())),
+                targetValue = -getDistance() * sin(deg2rad(randomAngle)),
                 animationSpec = repeatable(
                     iterations = 1,
                     animation = tween(
