@@ -33,6 +33,9 @@ fun NavGraph(navController: NavHostController) {
         composable(route = Screens.CircleRotation.route) {
             CircleRotationView()
         }
+        composable(route = Screens.ConfettiAnimation.route) {
+            ConfettiAnimationView()
+        }
     }
 }
 
@@ -42,4 +45,5 @@ sealed class Screens(val route: String) {
     object PaperPlane: Screens("PaperPlane")
     object BlinkCircle: Screens("BlinkCircle")
     object CircleRotation: Screens("CircleRotation")
+    object ConfettiAnimation: Screens("ConfettiAnimation")
 }

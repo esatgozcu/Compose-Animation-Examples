@@ -56,6 +56,21 @@ fun HomePage(navController: NavController) {
         HomePageItem(title = "Circle Rotation", image = R.drawable.ic_rotate_3d){
             navController.navigate(Screens.CircleRotation.route)
         }
+        Row(verticalAlignment = CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+                .clickable {
+                    navController.navigate(Screens.ConfettiAnimation.route)
+                }
+                .padding(10.dp),
+        ){
+            Text(text = "Confetti View")
+            Text(
+                text = "\uD83C\uDF89",
+                modifier = Modifier
+                    .size(25.dp)
+            )
+        }
     }
 }
 
