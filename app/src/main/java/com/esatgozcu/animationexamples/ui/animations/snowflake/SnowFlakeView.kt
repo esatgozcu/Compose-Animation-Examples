@@ -1,4 +1,4 @@
-package com.esatgozcu.animationexamples.ui.view
+package com.esatgozcu.animationexamples.ui.animations.snowflake
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
@@ -7,7 +7,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.esatgozcu.animationexamples.R
 import com.esatgozcu.animationexamples.helper.ScreenSize

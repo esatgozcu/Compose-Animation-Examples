@@ -1,4 +1,4 @@
-package com.esatgozcu.animationexamples.ui.view
+package com.esatgozcu.animationexamples.ui.animations.confetticenter
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
@@ -17,9 +17,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.esatgozcu.animationexamples.R
-import com.esatgozcu.animationexamples.ui.viewModel.ConfettiAnimationVM
-import com.esatgozcu.animationexamples.ui.viewModel.ConfettiTypes
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.PI
@@ -29,7 +26,7 @@ import kotlin.math.sin
 import kotlin.random.Random
 
 @Composable
-fun ConfettiAnimationView(viewModel: ConfettiAnimationVM = viewModel()) {
+fun ConfettiCenterView(viewModel: ConfettiAnimationVM = viewModel()) {
 
     val counter = remember { mutableStateOf(0) }
 

@@ -1,8 +1,6 @@
-package com.esatgozcu.animationexamples.ui.view
+package com.esatgozcu.animationexamples.ui.animations.blinkcircle
 
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -11,18 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.layoutId
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.esatgozcu.animationexamples.ui.viewModel.BlinkCircleVM
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.esatgozcu.animationexamples.R
 import com.esatgozcu.animationexamples.helper.ScreenSize
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlin.time.Duration.Companion.seconds
-import kotlin.time.ExperimentalTime
 
 @Composable
 fun BlinkCircleView(viewModel: BlinkCircleVM = viewModel()) {

@@ -1,4 +1,4 @@
-package com.esatgozcu.animationexamples.ui.view
+package com.esatgozcu.animationexamples.ui.animations.circlerotation
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.esatgozcu.animationexamples.ui.viewModel.CircleRotationVM
 
 @Composable
 fun CircleRotationView(viewModel: CircleRotationVM = viewModel()) {

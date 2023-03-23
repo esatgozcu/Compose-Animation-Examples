@@ -1,11 +1,8 @@
-package com.esatgozcu.animationexamples.ui.viewModel
+package com.esatgozcu.animationexamples.ui.animations.confetticenter
 
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Text
 import androidx.compose.ui.graphics.*
-import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.ViewModel
-import com.esatgozcu.animationexamples.R
 import com.esatgozcu.animationexamples.helper.CustomShape.Shapes.Parallelogram
 import com.esatgozcu.animationexamples.helper.CustomShape.Shapes.Triangle
 import com.esatgozcu.animationexamples.helper.random

@@ -1,16 +1,16 @@
 package com.esatgozcu.animationexamples.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalConfiguration
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.esatgozcu.animationexamples.ui.animations.blinkcircle.BlinkCircleView
+import com.esatgozcu.animationexamples.ui.animations.circlerotation.CircleRotationView
+import com.esatgozcu.animationexamples.ui.animations.confetticenter.ConfettiCenterView
+import com.esatgozcu.animationexamples.ui.animations.fireworkcenter.FireworkCenterView
+import com.esatgozcu.animationexamples.ui.animations.paperplane.PaperPlaneView
+import com.esatgozcu.animationexamples.ui.animations.snowflake.SnowFlakeView
 import com.esatgozcu.animationexamples.ui.view.*
-import com.esatgozcu.animationexamples.ui.viewModel.CircleRotationVM
-import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -33,8 +33,11 @@ fun NavGraph(navController: NavHostController) {
         composable(route = Screens.CircleRotation.route) {
             CircleRotationView()
         }
-        composable(route = Screens.ConfettiAnimation.route) {
-            ConfettiAnimationView()
+        composable(route = Screens.ConfettiCenter.route) {
+            ConfettiCenterView()
+        }
+        composable(route = Screens.FireworkCenter.route) {
+            FireworkCenterView()
         }
     }
 }
@@ -45,5 +48,6 @@ sealed class Screens(val route: String) {
     object PaperPlane: Screens("PaperPlane")
     object BlinkCircle: Screens("BlinkCircle")
     object CircleRotation: Screens("CircleRotation")
-    object ConfettiAnimation: Screens("ConfettiAnimation")
+    object ConfettiCenter: Screens("ConfettiCenter")
+    object FireworkCenter: Screens("FireworkCenter")
 }

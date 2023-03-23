@@ -9,3 +9,6 @@ fun Color.Companion.random() : Color {
     val blue = Random.nextInt(256)
     return Color(red, green, blue)
 }
+
+val String.color
+    get() = Color(android.graphics.Color.parseColor(this))

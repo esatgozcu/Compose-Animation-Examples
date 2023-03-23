@@ -8,8 +8,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.Center
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -20,10 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.esatgozcu.animationexamples.R
-import com.esatgozcu.animationexamples.helper.ScreenSize
 import com.esatgozcu.animationexamples.navigation.Screens
 import com.esatgozcu.animationexamples.ui.theme.AnimationExamplesTheme
-import com.esatgozcu.animationexamples.ui.viewModel.SnowFlakeVM
 
 @Composable
 fun HomePage(navController: NavController) {
@@ -60,13 +56,28 @@ fun HomePage(navController: NavController) {
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             modifier = Modifier
                 .clickable {
-                    navController.navigate(Screens.ConfettiAnimation.route)
+                    navController.navigate(Screens.ConfettiCenter.route)
                 }
                 .padding(10.dp),
         ){
             Text(text = "Confetti View")
             Text(
                 text = "\uD83C\uDF89",
+                modifier = Modifier
+                    .size(25.dp)
+            )
+        }
+        Row(verticalAlignment = CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier
+                .clickable {
+                    navController.navigate(Screens.FireworkCenter.route)
+                }
+                .padding(10.dp),
+        ){
+            Text(text = "Firework View")
+            Text(
+                text = "\uD83C\uDF86",
                 modifier = Modifier
                     .size(25.dp)
             )

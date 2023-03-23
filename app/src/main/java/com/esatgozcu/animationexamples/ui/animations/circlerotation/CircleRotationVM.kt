@@ -1,4 +1,4 @@
-package com.esatgozcu.animationexamples.ui.viewModel
+package com.esatgozcu.animationexamples.ui.animations.circlerotation
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
